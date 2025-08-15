@@ -1,0 +1,21 @@
+# Entrada: cadena con varias secuencias siguientes por /data:
+cadena = "/data:AUGGUAGCACCU/data:AUGGUGCACCU/data:AUGGUGCACCU/data:AUGGUGCACCU/data:AUGAGUCACCU"
+
+partes = cadena.split("/data:")
+secuencias = [s for s in partes if s != ""]
+
+referencia = secuencias[0]
+
+diferentes = 0
+for sec in secuencias[1:]:
+    if sec != referencia:
+        diferentes += 1
+
+print("Número total de secuencias:", len(secuencias))
+print("Secuencia de referencia:", referencia)
+print("Número de frecuencias diferentes:", diferentes)
+
+if diferentes > 0:
+    print("Posible enfermedad hereditaria")
+else:
+    print("Sin indicios de enfermedad hereditaria")
